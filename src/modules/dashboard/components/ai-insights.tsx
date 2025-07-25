@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Brain, TrendingUp, AlertTriangle, Sparkles } from "lucide-react"
 import { cn } from "@/lib/utils"
+import { toast } from "@/hooks/use-toast"
 
 interface Insight {
   id: string
@@ -41,6 +42,33 @@ const mockInsights: Insight[] = [
 ]
 
 export function AIInsights() {
+  const handleAction = (insight: Insight) => {
+    switch (insight.id) {
+      case '1':
+        toast({
+          title: "Rate Adjustment Initiated",
+          description: "Weekend rates have been increased by 15% for next month.",
+        })
+        break
+      case '2':
+        toast({
+          title: "Staff Reassigned",
+          description: "Additional housekeeping staff assigned to VIP rooms.",
+        })
+        break
+      case '3':
+        toast({
+          title: "Amenity Sent",
+          description: "Complimentary wine sent to James Rodriguez in Room 2047.",
+        })
+        break
+      default:
+        toast({
+          title: "Action Completed",
+          description: "Your request has been processed.",
+        })
+    }
+  }
   return (
     <Card>
       <CardHeader>
@@ -96,6 +124,7 @@ export function AIInsights() {
                       size="sm" 
                       variant={insight.type === 'alert' ? 'destructive' : 'default'}
                       className="text-xs"
+                      onClick={() => handleAction(insight)}
                     >
                       {insight.action}
                     </Button>

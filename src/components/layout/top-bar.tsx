@@ -1,9 +1,13 @@
+import { useState } from "react"
 import { Search, Bell, User, Command } from "lucide-react"
 import { IconButton } from "@/components/ui/icon-button"
 import { Button } from "@/components/ui/button"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { CommandPalette } from "@/components/ui/command-palette"
+import { NotificationsPanel } from "@/components/ui/notifications-panel"
 
 export function TopBar() {
+  const [commandPaletteOpen, setCommandPaletteOpen] = useState(false)
   return (
     <header className="h-16 bg-background border-b border-border flex items-center justify-between px-6">
       {/* Search & Command Palette */}
@@ -11,10 +15,7 @@ export function TopBar() {
         <Button
           variant="outline"
           className="w-80 justify-start text-muted-foreground hover:bg-accent"
-          onClick={() => {
-            // TODO: Implement command palette (Cmd+K)
-            console.log("Open command palette")
-          }}
+          onClick={() => setCommandPaletteOpen(true)}
         >
           <Search className="h-4 w-4 mr-2" />
           <span className="flex-1 text-left">Search hotels, guests, reservations...</span>
@@ -30,16 +31,7 @@ export function TopBar() {
       {/* Actions */}
       <div className="flex items-center space-x-4">
         {/* Notifications */}
-        <IconButton
-          variant="ghost"
-          aria-label="Notifications"
-          className="relative"
-        >
-          <Bell className="h-5 w-5" />
-          <span className="absolute -top-1 -right-1 h-3 w-3 bg-destructive rounded-full text-[10px] text-destructive-foreground flex items-center justify-center">
-            3
-          </span>
-        </IconButton>
+        <NotificationsPanel />
 
         {/* User Menu */}
         <div className="flex items-center space-x-3">
@@ -53,6 +45,12 @@ export function TopBar() {
           </Avatar>
         </div>
       </div>
+      
+      {/* Command Palette */}
+      <CommandPalette 
+        open={commandPaletteOpen}
+        onOpenChange={setCommandPaletteOpen}
+      />
     </header>
   )
 }

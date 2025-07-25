@@ -1,8 +1,10 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
 import { Clock, MapPin } from "lucide-react"
 import { cn } from "@/lib/utils"
+import { toast } from "@/hooks/use-toast"
 
 interface Arrival {
   id: string
@@ -51,6 +53,19 @@ const mockArrivals: Arrival[] = [
 ]
 
 export function ArrivalsTimeline() {
+  const handleCheckIn = (arrival: Arrival) => {
+    toast({
+      title: "Check-in Complete",
+      description: `${arrival.guest.name} has been checked into room ${arrival.room}.`,
+    })
+  }
+
+  const handlePrepareRoom = (arrival: Arrival) => {
+    toast({
+      title: "Room Preparation Started",
+      description: `Room ${arrival.room} is being prepared for ${arrival.guest.name}.`,
+    })
+  }
   return (
     <Card>
       <CardHeader>
@@ -101,15 +116,28 @@ export function ArrivalsTimeline() {
               )}
             </div>
             
-            <Badge variant={
-              arrival.status === 'checked-in' ? 'default' :
-              arrival.status === 'ready' ? 'secondary' :
-              'outline'
-            }>
-              {arrival.status === 'checked-in' ? 'Checked In' :
-               arrival.status === 'ready' ? 'Ready' :
-               'Pending'}
-            </Badge>
+            <div className="flex items-center gap-2">
+              <Badge variant={
+                arrival.status === 'checked-in' ? 'default' :
+                arrival.status === 'ready' ? 'secondary' :
+                'outline'
+              }>
+                {arrival.status === 'checked-in' ? 'Checked In' :
+                 arrival.status === 'ready' ? 'Ready' :
+                 'Pending'}
+              </Badge>
+              
+              {arrival.status !== 'checked-in' && (
+                <Button
+                  size="sm"
+                  variant={arrival.status === 'ready' ? 'default' : 'outline'}
+                  onClick={() => arrival.status === 'ready' ? handleCheckIn(arrival) : handlePrepareRoom(arrival)}
+                  className="text-xs"
+                >
+                  {arrival.status === 'ready' ? 'Check In' : 'Prepare Room'}
+                </Button>
+              )}
+            </div>
           </div>
         ))}
       </CardContent>

@@ -25,7 +25,7 @@ export function AppShell({ children }: AppShellProps) {
         <TopBar />
         
         {/* Page Content */}
-        <main className="flex-1 overflow-hidden">
+        <main className="flex-1 overflow-y-auto overflow-x-hidden">
           {children || <Outlet />}
         </main>
       </div>

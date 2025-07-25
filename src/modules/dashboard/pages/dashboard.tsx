@@ -7,7 +7,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
 export function DashboardPage() {
   return (
-    <div className="p-6 space-y-6 bg-background min-h-full">
+    <div className="space-y-6 bg-background min-h-full">
       {/* Header */}
       <div className="space-y-2">
         <h1 className="text-3xl font-display font-bold text-foreground">
@@ -20,17 +20,17 @@ export function DashboardPage() {
 
       {/* Tabbed Interface */}
       <Tabs defaultValue="overview" className="w-full">
-        <TabsList className="grid w-full grid-cols-4">
+        <TabsList className="grid w-full grid-cols-2 sm:grid-cols-4">
           <TabsTrigger value="overview">Live Overview</TabsTrigger>
           <TabsTrigger value="inbox">Guest Inbox</TabsTrigger>
           <TabsTrigger value="routing">System Routing</TabsTrigger>
           <TabsTrigger value="analytics">Analytics</TabsTrigger>
         </TabsList>
         
-        <TabsContent value="overview" className="space-y-6">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <TabsContent value="overview" className="space-y-4 sm:space-y-6">
+          <div className="grid grid-cols-1 xl:grid-cols-3 gap-4 sm:gap-6">
             {/* Pulse Card - Full Width */}
-            <div className="lg:col-span-3">
+            <div className="xl:col-span-3">
               <PulseCard />
             </div>
 
@@ -40,22 +40,22 @@ export function DashboardPage() {
             </div>
 
             {/* Right Column - AI Insights */}
-            <div className="lg:col-span-1">
+            <div className="xl:col-span-1">
               <AIInsights />
             </div>
           </div>
         </TabsContent>
         
-        <TabsContent value="inbox" className="space-y-6">
+        <TabsContent value="inbox" className="space-y-4 sm:space-y-6">
           <GuestRequestInbox />
         </TabsContent>
         
-        <TabsContent value="routing" className="space-y-6">
+        <TabsContent value="routing" className="space-y-4 sm:space-y-6">
           <RoutingVisualizer />
         </TabsContent>
         
-        <TabsContent value="analytics" className="space-y-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <TabsContent value="analytics" className="space-y-4 sm:space-y-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
             <PulseCard />
             <AIInsights />
           </div>

@@ -232,12 +232,12 @@ export function GuestRequestInbox() {
         </div>
 
         {/* Request List */}
-        <ScrollArea className="h-[500px]">
-          <div className="space-y-3">
+        <ScrollArea className="h-[400px] sm:h-[500px]">
+          <div className="space-y-2 sm:space-y-3">
             {filteredRequests.map((request) => (
               <div 
                 key={request.id} 
-                className="p-4 border border-border rounded-lg bg-background/50 hover:bg-background/80 transition-all cursor-pointer group"
+                className="p-3 sm:p-4 border border-border rounded-lg bg-background/50 hover:bg-background/80 transition-all cursor-pointer group"
                 onClick={() => handleViewRequest(request)}
               >
                 <div className="flex items-start justify-between mb-3">

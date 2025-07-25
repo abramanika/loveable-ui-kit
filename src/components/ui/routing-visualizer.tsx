@@ -146,7 +146,7 @@ export function RoutingVisualizer() {
       
       <CardContent>
         <Tabs defaultValue="flows" className="w-full">
-          <TabsList className="grid w-full grid-cols-3">
+          <TabsList className="grid w-full grid-cols-1 sm:grid-cols-3">
             <TabsTrigger value="flows">Active Flows</TabsTrigger>
             <TabsTrigger value="rules">Routing Rules</TabsTrigger>
             <TabsTrigger value="diagram">Flow Diagram</TabsTrigger>
@@ -158,7 +158,7 @@ export function RoutingVisualizer() {
               <Badge variant="secondary">{activeFlows.length} Active</Badge>
             </div>
             
-            <ScrollArea className="h-[400px]">
+            <ScrollArea className="h-[300px] sm:h-[400px]">
               <div className="space-y-3">
                 {activeFlows.map((flow) => (
                   <div key={flow.id} className="p-4 border border-border rounded-lg bg-background/50">

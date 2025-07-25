@@ -56,8 +56,8 @@ export function PulseCard() {
           </Button>
         </div>
       </CardHeader>
-      <CardContent className="space-y-6">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+      <CardContent className="space-y-4 sm:space-y-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
           <CardMetric
             title="Occupancy Today"
             value="87%"
@@ -139,7 +139,7 @@ export function PulseCard() {
         </div>
 
         {/* Performance Indicators */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-4 border-t border-border">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 pt-4 border-t border-border">
           <div className="space-y-2">
             <div className="flex items-center justify-between text-sm">
               <span className="text-muted-foreground">System Performance</span>

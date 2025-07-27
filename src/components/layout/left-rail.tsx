@@ -10,7 +10,14 @@ import {
   Settings,
   ChevronLeft,
   ChevronRight,
-  Hotel
+  Hotel,
+  Globe,
+  DollarSign,
+  TrendingUp,
+  CreditCard,
+  MessageSquare,
+  BarChart3,
+  KeyRound
 } from "lucide-react"
 import { IconButton } from "@/components/ui/icon-button"
 import { cn } from "@/lib/utils"
@@ -21,14 +28,17 @@ interface LeftRailProps {
 }
 
 const navigation = [
-  { name: "Dashboard", href: "/dashboard", icon: LayoutDashboard, color: "text-blue-400" },
-  { name: "PMS", href: "/pms", icon: Calendar, color: "text-green-400" },
-  { name: "CRM", href: "/crm", icon: Users, color: "text-purple-400" },
-  { name: "POS", href: "/pos", icon: ShoppingCart, color: "text-orange-400" },
-  { name: "OTA", href: "/ota", icon: Wifi, color: "text-cyan-400" },
-  { name: "Housekeeping", href: "/housekeeping", icon: Sparkles, color: "text-pink-400" },
-  { name: "Finance", href: "/finance", icon: Calculator, color: "text-emerald-400" },
-  { name: "Admin", href: "/admin", icon: Settings, color: "text-gray-400" },
+  { name: "PMS", href: "/pms", icon: Calendar, color: "text-blue-400" },
+  { name: "Channel Manager", href: "/channel-manager", icon: Globe, color: "text-green-400" },
+  { name: "Booking Engine", href: "/booking-engine", icon: Wifi, color: "text-purple-400" },
+  { name: "Revenue Management", href: "/revenue-management", icon: TrendingUp, color: "text-orange-400" },
+  { name: "CRM", href: "/crm", icon: Users, color: "text-cyan-400" },
+  { name: "POS System", href: "/pos", icon: ShoppingCart, color: "text-pink-400" },
+  { name: "Housekeeping", href: "/housekeeping", icon: Sparkles, color: "text-emerald-400" },
+  { name: "Payment Gateway", href: "/payment-gateway", icon: CreditCard, color: "text-yellow-400" },
+  { name: "Guest Experience", href: "/guest-experience", icon: MessageSquare, color: "text-indigo-400" },
+  { name: "Analytics", href: "/analytics", icon: BarChart3, color: "text-red-400" },
+  { name: "Access Control", href: "/access-control", icon: KeyRound, color: "text-gray-400" },
 ]
 
 export function LeftRail({ isCollapsed, onToggleCollapse }: LeftRailProps) {

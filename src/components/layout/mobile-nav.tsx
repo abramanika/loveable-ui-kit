@@ -4,14 +4,17 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { ScrollArea } from "@/components/ui/scroll-area"
 import { 
-  LayoutDashboard, 
-  Bed, 
+  Calendar, 
+  Globe, 
   Users, 
   UtensilsCrossed, 
   Wifi, 
   Sparkles, 
-  Calculator, 
-  Settings,
+  TrendingUp, 
+  CreditCard,
+  MessageSquare,
+  BarChart3,
+  KeyRound,
   X
 } from "lucide-react"
 
@@ -25,60 +28,81 @@ export function MobileNav({ isOpen, onClose }: MobileNavProps) {
   
   const navigationItems = [
     {
-      name: "Dashboard",
-      href: "/dashboard",
-      icon: LayoutDashboard,
-      color: "text-primary",
-      description: "Operations center"
-    },
-    {
       name: "PMS",
       href: "/pms",
-      icon: Bed,
+      icon: Calendar,
       color: "text-blue-400",
-      description: "Property management"
+      description: "Property management system"
+    },
+    {
+      name: "Channel Manager",
+      href: "/channel-manager",
+      icon: Globe,
+      color: "text-green-400",
+      description: "OTA sync & distribution"
+    },
+    {
+      name: "Booking Engine",
+      href: "/booking-engine",
+      icon: Wifi,
+      color: "text-purple-400",
+      description: "Direct bookings"
+    },
+    {
+      name: "Revenue Management",
+      href: "/revenue-management",
+      icon: TrendingUp,
+      color: "text-orange-400",
+      description: "Dynamic pricing"
     },
     {
       name: "CRM",
       href: "/crm",
       icon: Users,
-      color: "text-green-400",
+      color: "text-cyan-400",
       description: "Guest relations"
     },
     {
-      name: "POS",
+      name: "POS System",
       href: "/pos",
       icon: UtensilsCrossed,
-      color: "text-orange-400",
+      color: "text-pink-400",
       description: "Point of sale"
-    },
-    {
-      name: "OTA",
-      href: "/ota",
-      icon: Wifi,
-      color: "text-cyan-400",
-      description: "Channel management"
     },
     {
       name: "Housekeeping",
       href: "/housekeeping",
       icon: Sparkles,
-      color: "text-purple-400",
+      color: "text-emerald-400",
       description: "Room operations"
     },
     {
-      name: "Finance",
-      href: "/finance",
-      icon: Calculator,
-      color: "text-emerald-400",
-      description: "Financial management"
+      name: "Payment Gateway",
+      href: "/payment-gateway",
+      icon: CreditCard,
+      color: "text-yellow-400",
+      description: "Secure payments"
     },
     {
-      name: "Admin",
-      href: "/admin",
-      icon: Settings,
+      name: "Guest Experience",
+      href: "/guest-experience",
+      icon: MessageSquare,
+      color: "text-indigo-400",
+      description: "Communication tools"
+    },
+    {
+      name: "Analytics",
+      href: "/analytics",
+      icon: BarChart3,
+      color: "text-red-400",
+      description: "Business intelligence"
+    },
+    {
+      name: "Access Control",
+      href: "/access-control",
+      icon: KeyRound,
       color: "text-gray-400",
-      description: "System settings"
+      description: "Mobile key systems"
     }
   ]
 

@@ -15,6 +15,7 @@ import PaymentGatewayPage from "./pages/payment-gateway";
 import GuestExperiencePage from "./pages/guest-experience";
 import AnalyticsPage from "./pages/analytics";
 import AccessControlPage from "./pages/access-control";
+import GuestIntelligencePage from "./pages/guest-intelligence";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -32,6 +33,7 @@ const App = () => (
           <Route path="/booking-engine/*" element={<BookingEnginePage />} />
           <Route path="/revenue-management/*" element={<RevenueManagementPage />} />
           <Route path="/crm/*" element={<CRMPage />} />
+          <Route path="/guest-intelligence/*" element={<GuestIntelligencePage />} />
           <Route path="/pos/*" element={<POSPage />} />
           <Route path="/housekeeping/*" element={<HousekeepingPage />} />
           <Route path="/payment-gateway/*" element={<PaymentGatewayPage />} />

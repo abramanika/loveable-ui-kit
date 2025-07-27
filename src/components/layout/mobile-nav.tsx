@@ -15,6 +15,7 @@ import {
   MessageSquare,
   BarChart3,
   KeyRound,
+  Brain,
   X
 } from "lucide-react"
 
@@ -61,6 +62,13 @@ export function MobileNav({ isOpen, onClose }: MobileNavProps) {
       icon: Users,
       color: "text-cyan-400",
       description: "Guest relations"
+    },
+    {
+      name: "Guest Intelligence",
+      href: "/guest-intelligence",
+      icon: Brain,
+      color: "text-violet-400",
+      description: "AI-powered guest insights"
     },
     {
       name: "POS System",

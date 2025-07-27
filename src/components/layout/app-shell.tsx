@@ -16,7 +16,7 @@ export function AppShell({ children }: AppShellProps) {
   return (
     <div className="flex h-screen bg-background overflow-hidden">
       {/* Desktop Left Navigation Rail */}
-      <div className="hidden md:block">
+      <div className="hidden md:block h-full">
         <LeftRail 
           isCollapsed={isRailCollapsed}
           onToggleCollapse={() => setIsRailCollapsed(!isRailCollapsed)}

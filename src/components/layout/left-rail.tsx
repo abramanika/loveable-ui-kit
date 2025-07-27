@@ -34,13 +34,13 @@ const navigation = [
   { name: "Booking Engine", href: "/booking-engine", icon: Wifi, color: "text-purple-400" },
   { name: "Revenue Management", href: "/revenue-management", icon: TrendingUp, color: "text-orange-400" },
   { name: "CRM", href: "/crm", icon: Users, color: "text-cyan-400" },
-  { name: "Guest Intelligence", href: "/guest-intelligence", icon: Brain, color: "text-violet-400" },
   { name: "POS System", href: "/pos", icon: ShoppingCart, color: "text-pink-400" },
   { name: "Housekeeping", href: "/housekeeping", icon: Sparkles, color: "text-emerald-400" },
   { name: "Payment Gateway", href: "/payment-gateway", icon: CreditCard, color: "text-yellow-400" },
   { name: "Guest Experience", href: "/guest-experience", icon: MessageSquare, color: "text-indigo-400" },
   { name: "Analytics", href: "/analytics", icon: BarChart3, color: "text-red-400" },
   { name: "Access Control", href: "/access-control", icon: KeyRound, color: "text-gray-400" },
+  { name: "Guest Intelligence", href: "/guest-intelligence", icon: Brain, color: "text-violet-400" },
 ]
 
 export function LeftRail({ isCollapsed, onToggleCollapse }: LeftRailProps) {
@@ -48,7 +48,7 @@ export function LeftRail({ isCollapsed, onToggleCollapse }: LeftRailProps) {
 
   return (
     <nav className={cn(
-      "bg-sidebar border-r border-sidebar-border flex flex-col transition-all duration-300",
+      "bg-sidebar border-r border-sidebar-border flex flex-col transition-all duration-300 h-screen",
       isCollapsed ? "w-16" : "w-64"
     )}>
       {/* Header */}
